@@ -1,0 +1,36 @@
+// Home.module.scss
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+
+.bar {
+  flex: 1;
+  background-color: #61dafb;
+  color: #000;
+  padding: 10px;
+  display: flex;
+  max-height: 60px;
+
+  h1 {
+    flex: 1;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  button {
+    flex: 1;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: 0px;
+    max-width: 150px;
+    cursor: pointer;
+  }
+}
