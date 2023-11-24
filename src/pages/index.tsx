@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { useRef, useState } from "react";
 import { EditorRef, EmailEditorProps } from "react-email-editor";
 import styles from "../styles/Home.module.scss";
-import sample from "./sample/sample.json";
+import sample from "./sample/girl.json";
 
 const EmailEditor = dynamic(
   () => import("react-email-editor").then((mod) => mod.EmailEditor),
