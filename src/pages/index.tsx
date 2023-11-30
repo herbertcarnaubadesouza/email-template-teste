@@ -25,11 +25,15 @@ export default function Home() {
   const exportHtml = () => {
     const unlayer = emailEditorRef.current?.editor;
 
-    unlayer?.exportHtml((data: any) => {
-      const { design, html } = data;
-      console.log("exportHtml", html);
-      alert("Output HTML has been logged in your developer console.");
-    });
+    if (unlayer) {
+      unlayer.exportHtml((data: any) => {
+        const { design, html } = data;
+        console.log("exportHtml", html);
+        alert("Output HTML has been logged in your developer console.");
+      });
+    } else {
+      console.error("Unlayer editor is not defined");
+    }
   };
 
   const togglePreview = () => {
@@ -54,8 +58,8 @@ export default function Home() {
     unlayer.loadDesign(sample);
   };
 
-  const onReady: EmailEditorProps["onReady"] = (unlayer: any) => {
-    console.log("onReady", unlayer);
+  const onReady: EmailEditorProps["onReady"] = (unlayer) => {
+    emailEditorRef.current = { editor: unlayer };
   };
 
   return (
